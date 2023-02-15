@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>My Book List</h1>
+
+    <script>
+
+        var books = [
+            {
+                title: 'The Design of EveryDay Things',
+                author: 'Don Norman',
+                img: 'EveryDayThings.png',
+                alreadyRead: false
+            }, {
+                title: 'The Most Human Human',
+                author: 'Brian Christian',
+                img: 'Human.jfif',
+                alreadyRead: true
+            }
+        ];
+
+        for (var i = 0; i < books.length; i++) {
+            var booksD = document.createElement('ul');
+            var booksB = document.createElement('li');
+            var booksQ = document.createElement('p');
+            var booksA = document.createElement('P');
+            var booksimg = document.createElement('img');
+            booksimg.src = books[i].img;
+            booksimg.style.width = "300px";
+            booksimg.style.height = "300px";
+            booksQ.textContent = "Title: " + books[i].title;
+            booksA.textContent = "By: " + books[i].author;
+            booksB.append(booksQ, booksA, booksimg);
+            booksD.append(booksB);
+            document.body.appendChild(booksD);
+            console.log(booksD);
+            if(books[i].alreadyRead) {
+                boooksB.style.color = "green";
+
+            } else{
+                booksB.style.color = "red"
+            }
+
+        }
+    </script>
+
+
+    
+</body>
+</html>
